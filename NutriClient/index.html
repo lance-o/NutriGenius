@@ -1,13 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>NutriGenius</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <header>
+      <h1>Header</h1>
+      <nav>Logo / Nav bar</nav>
+    </header>
+
+    <div id="calculator">
+      <div id="form_container">
+        Unit Selector:
+        <form id="weight_form">
+          Weight (kg):
+          <textarea id="message" name="" rows="1" required></textarea>
+        </form>
+        <form id="weight_form">
+          Height (cm):
+          <textarea id="message" name="" rows="1" required></textarea>
+        </form>
+      </form>
+      <div class="dropdown">
+        <button class="dropbtn">Sex:</button>
+        <div class="dropdown-content">
+          <a href="#">Male</a>
+          <a href="#">Female</a>
+          
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Activity:</button>
+        <div class="dropdown-content">
+          <a href="#">Low</a>
+          <a href="#">Medium</a>
+          <a href="#">High</a>
+
+      <submit>
+        <button id = "submit_button">Submit</button></submit>
+
+          
+        </div>
+      
+      <div id="results_container">results go here</div>
+    </div>
+
+    <div id="meal_planner"></div>
   </body>
 </html>
