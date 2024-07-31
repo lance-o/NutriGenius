@@ -127,3 +127,11 @@ button:hover {
   align-items: center;
 }
 
+.backgroundimg {
+  height: 100vh;
+  max-width: 100%;
+  background-image: url(background\ photo.png);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
