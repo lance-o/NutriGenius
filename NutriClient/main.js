@@ -104,6 +104,7 @@ function getServer(){
       document.getElementById("height_input").value = "";
       document.getElementById("sex_btn").textContent = "Sex:";
       document.getElementById("activity_btn").textContent = "Activity:";
+  
     } else {
       alert("Please enter valid numbers for weight and height.");
     }
@@ -114,44 +115,87 @@ function getServer(){
     .addEventListener("click", (event) => {
       event.preventDefault();
       handleFormSubmit();
+      if(document.getElementById("calorie-value").textContent != "NaN"){
+        makeMealPlanner();
+      }
+      
     });
 
-  function makeMealPlanner(){
+  async function getCalorieMultiplier(){
+    const meals = await fetchMeals();
+    let calorieMultiplier = 1.0;
+    let totalCalories = 0;
     for(let i = 0; i < 3; i++){
-      makeMealPlan(i);
+      totalCalories += meals[i].total_calories;
+    }
+
+    calorieMultiplier = document.getElementById("calorie-value").textContent / totalCalories;
+
+    return calorieMultiplier;
+  }
+
+  
+  async function makeMealPlanner(){
+    let calorieMultiplier = await getCalorieMultiplier();
+    for(let i = 0; i < 3; i++){
+      makeMealPlan(i, calorieMultiplier);
     }
   }
 
-  async function makeMealPlan(meal_id){
+  async function makeMealPlan(meal_id, calorieMultiplier){
+    // Empty every time calories is calculated
+    meal_planner_container.innerHTML = '';
+
+    // Declare elements
     const mealname = document.createElement('h1');
     const calories = document.createElement('p');
-    const ingredients = document.createElement('p');
+    const ingredientcontainer = document.createElement('div');
     const image = document.createElement('img');
 
+    // Declare classes
     mealname.classList.add("mealname");
+    ingredientcontainer.classList.add("ingredientcontainer");
     calories.classList.add("calories");
-    ingredients.classList.add("ingredients");
     image.classList.add("mealimage");
 
+    // Contact server, get meal info
     const meals = await fetchMeals();
 
+    // Get image url from server
     image.src = getImageURL(meals[meal_id].meal_type);
     image.style.width = "100px";
 
     mealname.textContent = meals[meal_id].meal_name;
-    calories.textContent = meals[meal_id].total_calories;
-    //ingredients.textContent = meals[meal_id];
-    //image.textContent = meals[meal_id];
-    //console.log(meals);
 
+    // NOTE: Defaults to base calories
+    let newcalories = parseInt(meals[meal_id].total_calories) * calorieMultiplier;
+    calories.textContent = `Calories: ${Math.floor(newcalories)}`;
 
-
-    //content.textContent = "i am being added from javascript";
-    //content.style.color = "black";
     meal_planner_container.appendChild(image);
     meal_planner_container.appendChild(mealname);
+
+    for(let i = 0; i<meals[meal_id].meal_ingredient_names.length;i++){
+      const ingredient = document.createElement('p');
+      ingredient.classList.add("ingredients");
+
+      if(!meals[meal_id].meal_ingredient_amounts[i].search("AMT="))
+      {
+        let amount = parseInt(meals[meal_id].meal_ingredient_amounts[i].replaceAll("AMT=", "")) * calorieMultiplier;
+        ingredient.textContent = `${Math.floor(amount)}`;
+        ingredient.textContent += ` ${meals[meal_id].meal_ingredient_names[i]}.`;
+      }
+      else if(!meals[meal_id].meal_ingredient_amounts[i].search("GRAMS=")){
+        let amount = parseInt(meals[meal_id].meal_ingredient_amounts[i].replaceAll("GRAMS=", "")) * calorieMultiplier;
+        ingredient.textContent = `${meals[meal_id].meal_ingredient_names[i]}:`;
+        ingredient.textContent += ` ${Math.floor(amount)} grams.`;
+      }
+
+      const newline = document.createElement('br');
+      ingredientcontainer.appendChild(ingredient);
+      ingredientcontainer.appendChild(newline);
+    }
+
+    meal_planner_container.appendChild(ingredientcontainer);
     meal_planner_container.appendChild(calories);
   }
-
-  makeMealPlanner();
 });
