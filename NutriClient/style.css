@@ -1,6 +1,8 @@
 body {
+  background-image: url(background-photo.png);
   padding: 0;
   margin: 0;
+  background-size: 100%;
 }
 
 header {
@@ -127,11 +129,12 @@ button:hover {
   align-items: center;
 }
 
-.backgroundimg {
+/* .backgroundimg {
   height: 100vh;
   max-width: 100%;
   background-image: url(background\ photo.png);
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-}
+} */
+
