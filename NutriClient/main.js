@@ -1,6 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector("header");
+  const meal_planner_container = document.getElementById("meal-planner");
+
   let selectedSex = "";
   let selectedActivity = "";
+
+  const serverHost = "https://nutrigenius.onrender.com";
+const serverResources = `${serverHost}/resources/`;
+
+async function fetchMeals(){
+    const result = await fetch(`${serverHost}/meals`);
+    const meals = await result.json();
+    return meals;
+}
+
+async function filterMeals(meal_type){
+    let result = await fetch(`${serverHost}/mealquery`, {
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({meal_type}),
+    });
+    let meals = await result.json();
+    return meals;
+}
+
+function getImageURL(meal){
+    return `${serverResources}${meal}.png`;
+}
+
+function getServer(){
+    return serverHost;
+}
+
 
   function caloriesCounter(weight, sex, height, activity) {
     // Factors for sex and activity
@@ -82,4 +115,43 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       handleFormSubmit();
     });
+
+  function makeMealPlanner(){
+    for(let i = 0; i < 3; i++){
+      makeMealPlan(i);
+    }
+  }
+
+  async function makeMealPlan(meal_id){
+    const mealname = document.createElement('h1');
+    const calories = document.createElement('p');
+    const ingredients = document.createElement('p');
+    const image = document.createElement('img');
+
+    mealname.classList.add("mealname");
+    calories.classList.add("calories");
+    ingredients.classList.add("ingredients");
+    image.classList.add("mealimage");
+
+    const meals = await fetchMeals();
+
+    image.src = getImageURL(meals[meal_id].meal_type);
+    image.style.width = "100px";
+
+    mealname.textContent = meals[meal_id].meal_name;
+    calories.textContent = meals[meal_id].total_calories;
+    //ingredients.textContent = meals[meal_id];
+    //image.textContent = meals[meal_id];
+    //console.log(meals);
+
+
+
+    //content.textContent = "i am being added from javascript";
+    //content.style.color = "black";
+    meal_planner_container.appendChild(image);
+    meal_planner_container.appendChild(mealname);
+    meal_planner_container.appendChild(calories);
+  }
+
+  makeMealPlanner();
 });

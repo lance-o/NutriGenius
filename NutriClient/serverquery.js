@@ -1,14 +1,14 @@
 const serverHost = "https://nutrigenius.onrender.com";
 const serverResources = `${serverHost}/resources/`;
 
-async function fetchMeals(){
+export async function fetchMeals(){
     const result = await fetch(`${serverHost}/meals`);
     const meals = await result.json();
     console.log(meals);
     return meals;
 }
 
-async function filterMeals(meal_type){
+export async function filterMeals(meal_type){
     let result = await fetch(`${serverHost}/mealquery`, {
         method:"POST",
         headers:{
@@ -20,7 +20,7 @@ async function filterMeals(meal_type){
     return meals;
 }
 
-function getImageURL(meal){
+export function getImageURL(meal){
     return `${serverResources}${meal}.png`;
 }
 
