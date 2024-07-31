@@ -8,7 +8,7 @@ header {
   padding: 0;
   top: 0;
   position: fixed;
-  background-color: blue;
+  background-color: #161A30;
   color: white;
   width: 100vw;
   display: flex;
@@ -23,7 +23,7 @@ header {
   top: 20vh;
   display: flex;
   width: 100%;
-  background-color: bisque;
+  background-color: white;
   height: 80vh;
   flex-direction: row;
 }
@@ -35,13 +35,14 @@ header {
   justify-content: flex-start;
   height: 100%;
   flex-direction: column;
+  padding:5px;
 }
 
 #submit_button {
   margin-top: 10px;
   width: 100px;
   height: 30px;
-  background-color: blue;
+  background-color: #B6BBC4;
   color: white;
   border: none;
   border-radius: 5px;
@@ -59,7 +60,7 @@ button:hover {
 
 /* Dropdown button */
 .dropbtn {
-  background-color: #4caf50; /* Green background */
+  background-color: #B6BBC4; /* Green background */
   color: white; /* White text */
   padding: 16px; /* Some padding */
   font-size: 16px; /* Increase font size */
@@ -99,4 +100,12 @@ button:hover {
 /* Show the dropdown content when the dropdown button is hovered over */
 .dropdown:hover .dropdown-content {
   display: block; /* Show the dropdown */
+}
+.logo {
+  display: flex;
+  position: absolute;
+  left: 10px;
+  border-radius: 8;
+  height: 100px;
+  width: 100px;
 }
