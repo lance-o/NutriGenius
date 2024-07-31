@@ -104,6 +104,7 @@ function getServer(){
       document.getElementById("height_input").value = "";
       document.getElementById("sex_btn").textContent = "Sex:";
       document.getElementById("activity_btn").textContent = "Activity:";
+  
     } else {
       alert("Please enter valid numbers for weight and height.");
     }
@@ -114,6 +115,10 @@ function getServer(){
     .addEventListener("click", (event) => {
       event.preventDefault();
       handleFormSubmit();
+      if(document.getElementById("calorie-value").textContent != "NaN"){
+        makeMealPlanner();
+      }
+      
     });
 
   function makeMealPlanner(){
@@ -123,6 +128,7 @@ function getServer(){
   }
 
   async function makeMealPlan(meal_id){
+    meal_planner_container.innerHTML = '';
     const mealname = document.createElement('h1');
     const calories = document.createElement('p');
     const ingredients = document.createElement('p');
@@ -152,6 +158,4 @@ function getServer(){
     meal_planner_container.appendChild(mealname);
     meal_planner_container.appendChild(calories);
   }
-
-  makeMealPlanner();
 });
