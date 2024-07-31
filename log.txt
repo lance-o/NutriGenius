@@ -1,4 +1,7 @@
-2024/07/30 09:57:53 Micro started
-2024/07/30 09:57:53 ONBUFFEROPEN unknown
-2024/07/30 09:57:53 ONBUFFEROPEN unknown
-2024/07/30 09:57:53 ONBUFFEROPEN unknown
+2024/07/30 11:47:26 Micro started
+2024/07/30 11:47:26 ONBUFFEROPEN javascript
+2024/07/30 11:47:26 Server Options map[1:python=pylsp 2:go=gopls 3:typescript=deno lsp 4:javascript=deno lsp 5:markdown=deno lsp 6:json=deno lsp 7:jsonc=deno lsp 8:rust=rls 9:lua=lua-lsp 10:c++=clangd 11:python=pylsp 12:go=gopls 13:typescript=deno lsp 14:javascript=deno lsp 15:markdown=deno lsp 16:json=deno lsp 17:jsonc=deno lsp 18:rust=rls 19:lua=lua-lsp 20:c++=clangd]
+2024/07/30 11:47:26 Starting server javascript
+2024/07/30 11:47:26 ONBUFFEROPEN unknown
+2024/07/30 11:47:26 ONBUFFEROPEN unknown
+2024/07/30 11:47:26 ONEXIT javascript 

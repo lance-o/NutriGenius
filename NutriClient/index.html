@@ -10,47 +10,43 @@
   </head>
   <body>
     <header>
-      <img class="logo" src="NutriGenius3.png"> 
+      <img class="logo" src="NutriGenius3.png" alt="NutriGenius Logo" />
       <h1>Header</h1>
       <nav>Logo / Nav bar</nav>
-
     </header>
 
     <div id="calculator">
       <div id="form_container">
-        Unit Selector:
         <form id="weight_form">
           Weight (kg):
-          <textarea id="message" name="" rows="1" required></textarea>
-        </form>
-        <form id="weight_form">
+          <textarea id="weight_input" rows="1" required></textarea>
+          <br />
           Height (cm):
-          <textarea id="message" name="" rows="1" required></textarea>
+          <textarea id="height_input" rows="1" required></textarea>
         </form>
-      </form>
-      <div class="dropdown">
-        <button class="dropbtn">Sex:</button>
-        <div class="dropdown-content">
-          <a href="#" data-value="Male">Male</a>
-          <a href="#" data-value="Female">Female</a>
+        <div class="dropdown">
+          <button class="dropbtn" id="sex_btn">Sex:</button>
+          <div class="dropdown-content" id="sex_dropdown">
+            <a href="#" data-value="Male">Male</a>
+            <a href="#" data-value="Female">Female</a>
+          </div>
         </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Activity:</button>
-        <div class="dropdown-content">
-          <a href="#" data-value="Low">Low</a>
-          <a href="#" data-value="Medium">Medium</a>
-          <a href="#" data-value="High">High</a>
+        <div class="dropdown">
+          <button class="dropbtn" id="activity_btn">Activity:</button>
+          <div class="dropdown-content" id="activity_dropdown">
+            <a href="#" data-value="Low">Low Activity</a>
+            <a href="#" data-value="Medium">Medium Activity</a>
+            <a href="#" data-value="High">High Activity</a>
+          </div>
         </div>
+        <button id="submit_button">Submit</button>
       </div>
-        
-      
-        <submit>
-          <button id = "submit_button">Submit</button></submit>
-      
-      <div id="results_container">results go here</div>
+      <div id="results-container">
+        Calories Per Day
+        <p id="calorie-value">0000</p>
+      </div>
     </div>
 
-    <div id="meal_planner"></div>
+    <div id="meal-planner"></div>
   </body>
 </html>

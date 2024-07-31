@@ -8,7 +8,7 @@ header {
   padding: 0;
   top: 0;
   position: fixed;
-  background-color: #161A30;
+  background-color: #161a30;
   color: white;
   width: 100vw;
   display: flex;
@@ -21,11 +21,14 @@ header {
 #calculator {
   position: relative;
   top: 20vh;
-  display: flex;
+  display: grid;
   width: 100%;
   background-color: white;
-  height: 80vh;
+  height: 20px;
   flex-direction: row;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
 #form_container {
@@ -33,16 +36,17 @@ header {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 100%;
+  height: fit-content;
   flex-direction: column;
-  padding:5px;
+  padding: 20px;
+  border: 1px black;
 }
 
 #submit_button {
   margin-top: 10px;
   width: 100px;
   height: 30px;
-  background-color: #B6BBC4;
+  background-color: #b6bbc4;
   color: white;
   border: none;
   border-radius: 5px;
@@ -60,7 +64,7 @@ button:hover {
 
 /* Dropdown button */
 .dropbtn {
-  background-color: #B6BBC4; /* Green background */
+  background-color: #b6bbc4; /* Green background */
   color: white; /* White text */
   padding: 16px; /* Some padding */
   font-size: 16px; /* Increase font size */
@@ -108,4 +112,17 @@ button:hover {
   border-radius: 8;
   height: 100px;
   width: 100px;
+}
+
+#results-container {
+  justify-self: center;
+  border: 10px #161a30;
+  background-color: #b6bbc4a9;
+  font-size: 3rem;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
