@@ -16,7 +16,7 @@ db.query(`CREATE TABLE IF NOT EXISTS mealplans (
 );
 
 INSERT INTO mealplans (meal_name, total_calories, meal_type, meal_ingredient_names, meal_ingredient_amounts, meal_image_url)
-VALUES ('Breakfast Meal', 807, 'breakfast', ARRAY['Eggs', 'Bacon Slices', 'Slices of Bread', 'Beans', 'Mushrooms', 'Tomato'], ARRAY['AMT=2', 'AMT=2', 'AMT=1', 'GRAMS=150', 'AMT=1', 'AMT=1'], '');
+VALUES ('Breakfast Meal', 807, 'Breakfast', ARRAY['Eggs', 'Bacon Slices', 'Slices of Bread', 'Beans', 'Mushrooms', 'Tomato'], ARRAY['AMT=2', 'AMT=2', 'AMT=1', 'GRAMS=150', 'AMT=1', 'AMT=1'], '');
 
 INSERT INTO mealplans (meal_name, total_calories, meal_type, meal_ingredient_names, meal_ingredient_amounts, meal_image_url)
 VALUES ('Lunch Meal', 445, 'Lunch', ARRAY['Diced Chicken', 'Boiled Rice', 'Broccoli', 'Green Peppers', 'Peas'], ARRAY['GRAMS=300', 'GRAMS=300', 'AMT=3', 'AMT=3', 'GRAMS=200'], '');
