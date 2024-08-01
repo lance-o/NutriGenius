@@ -1,39 +1,11 @@
+import { fetchMeals, filterMeals, getImageURL, getServer  } from "./serverquery.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("header");
   const meal_planner_container = document.getElementById("meal-planner");
 
   let selectedSex = "";
   let selectedActivity = "";
-
-  const serverHost = "https://nutrigenius.onrender.com";
-const serverResources = `${serverHost}/resources/`;
-
-async function fetchMeals(){
-    const result = await fetch(`${serverHost}/meals`);
-    const meals = await result.json();
-    return meals;
-}
-
-async function filterMeals(meal_type){
-    let result = await fetch(`${serverHost}/mealquery`, {
-        method:"POST",
-        headers:{
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({meal_type}),
-    });
-    let meals = await result.json();
-    return meals;
-}
-
-function getImageURL(meal){
-    return `${serverResources}${meal}.png`;
-}
-
-function getServer(){
-    return serverHost;
-}
-
 
   function caloriesCounter(weight, sex, height, activity) {
     // Factors for sex and activity

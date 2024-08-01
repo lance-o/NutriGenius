@@ -24,6 +24,6 @@ export function getImageURL(meal){
     return `${serverResources}${meal}.png`;
 }
 
-function getServer(){
+export function getServer(){
     return serverHost;
 }
