@@ -108,15 +108,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   async function makeMealPlanner(){
+     // Empty every time calories is calculated
+     meal_planner_container.innerHTML = '';
     let calorieMultiplier = await getCalorieMultiplier();
-    for(let i = 0; i < 3; i++){
-      makeMealPlan(i, calorieMultiplier);
-    }
+    const breakfast = await filterMeals("Breakfast");
+    const lunch = await filterMeals("Lunch");
+    const dinner = await filterMeals("Dinner");
+    makeMealPlan(breakfast, 0, calorieMultiplier);
+    makeMealPlan(lunch, 0, calorieMultiplier);
+    makeMealPlan(dinner, 0, calorieMultiplier);
   }
 
-  async function makeMealPlan(meal_id, calorieMultiplier){
-    // Empty every time calories is calculated
-    meal_planner_container.innerHTML = '';
+  async function makeMealPlan(meals ,meal_id, calorieMultiplier){
+  
 
     // Declare elements
     const div= document.createElement('div');
@@ -132,12 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
     calories.classList.add("calories");
     image.classList.add("mealimage");
 
-    // Contact server, get meal info
-    const meals = await fetchMeals();
-
     // Get image url from server
     image.src = getImageURL(meals[meal_id].meal_type);
-    image.style.width = "100px";
 
     mealname.textContent = meals[meal_id].meal_name;
 
