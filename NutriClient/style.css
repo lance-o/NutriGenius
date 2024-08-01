@@ -206,8 +206,6 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: end;
-}
-=======
   justify-content: space-between;
   position:absolute;
   top: 50vh;
