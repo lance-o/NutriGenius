@@ -147,6 +147,7 @@ function getServer(){
     meal_planner_container.innerHTML = '';
 
     // Declare elements
+    const div= document.createElement('div');
     const mealname = document.createElement('h1');
     const calories = document.createElement('p');
     const ingredientcontainer = document.createElement('div');
@@ -154,6 +155,7 @@ function getServer(){
 
     // Declare classes
     mealname.classList.add("mealname");
+    div.classList.add ("meal_plan");
     ingredientcontainer.classList.add("ingredientcontainer");
     calories.classList.add("calories");
     image.classList.add("mealimage");
@@ -171,8 +173,8 @@ function getServer(){
     let newcalories = parseInt(meals[meal_id].total_calories) * calorieMultiplier;
     calories.textContent = `Calories: ${Math.floor(newcalories)}`;
 
-    meal_planner_container.appendChild(image);
-    meal_planner_container.appendChild(mealname);
+    div.appendChild(image);
+    div.appendChild(mealname);
 
     for(let i = 0; i<meals[meal_id].meal_ingredient_names.length;i++){
       const ingredient = document.createElement('p');
@@ -195,7 +197,8 @@ function getServer(){
       ingredientcontainer.appendChild(newline);
     }
 
-    meal_planner_container.appendChild(ingredientcontainer);
-    meal_planner_container.appendChild(calories);
+    div.appendChild(ingredientcontainer);
+    div.appendChild(calories);
+    meal_planner_container.appendChild(div);
   }
 });
