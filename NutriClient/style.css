@@ -11,33 +11,31 @@ header {
   top: 0;
   position: fixed;
   background-color: white;
-  color: #405D72;
+  color: #405d72;
   width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   height: 20vh;
   z-index: 1000;
-  
 }
 
 .nav {
-  gap:20px;
+  gap: 20px;
   margin: 0;
   padding: 0;
   top: 0;
   left: 150px;
   position: fixed;
-  color: #405D72;
+  color: #405d72;
   width: 80vw;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   height: 20vh;
   z-index: 1000;
-  
 }
 
 #calculator {
@@ -64,14 +62,53 @@ header {
   border: 1px black;
 }
 
-#submit_button {
+#weight_form {
   margin-top: 10px;
+  margin-left: 150px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+#sex_btn {
+  margin-left: 150px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
   width: 100px;
   height: 30px;
-  background-color: #b6bbc4;
+  background-color: rgb(1, 20, 1);
+}
+
+#activity_btn {
+  margin-left: 150px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(1, 20, 1);
+}
+
+#submit_button {
+  margin-top: 5px;
+  margin-left: 150px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(1, 20, 1);
   color: white;
   border: none;
   border-radius: 5px;
+}
+
+#results-container {
+  justify-self: center;
+  border: 10px #161a30;
+  background-color: #b6bbc4a9;
+  font-size: 2rem;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
 }
 
 button:hover {
@@ -94,7 +131,6 @@ button:hover {
   cursor: pointer; /* Pointer/hand icon on hover */
   border-radius: 8px;
 }
-
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover,
@@ -134,23 +170,9 @@ button:hover {
   position: absolute;
   left: 10px;
   border-radius: 8;
-  height: 100px;
-  width: 100px;
-}
-
-#results-container {
-  justify-self: center;
-  border: 10px #161a30;
-  background-color: #b6bbc4a9;
-  font-size: 3rem;
-  padding: 10px;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-  
+  height: 150px;
+  width: 150px;
+  margin-left: 150px;
 }
 
 /* .backgroundimg {
@@ -163,19 +185,19 @@ button:hover {
 } */
 
 .logo {
-border-radius: 8px;
-width: 100px;
-height: 100px;
-margin-top: 10px;
-margin-left: 20px;
+  border-radius: 8px;
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 h1 {
   font-family: arial;
   margin-top: 40px;
-  margin-left:20px;
+  margin-left: 20px;
   font-size: 20rm;
 }
-h2{
+h2 {
   display: block;
   float: left;
 }
@@ -183,6 +205,9 @@ h2{
 #meal-planner {
   display: flex;
   flex-direction: row;
+  justify-content: end;
+}
+=======
   justify-content: space-between;
   position:absolute;
   top: 50vh;
