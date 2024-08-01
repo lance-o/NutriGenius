@@ -72,21 +72,12 @@ header {
 #sex_btn {
   margin-left: 150px;
   margin-bottom: 15px;
-  display: flex;
-  justify-content: center;
-  width: 100px;
-  height: 30px;
-  background-color: rgb(1, 20, 1);
 }
 
 #activity_btn {
   margin-left: 150px;
   margin-bottom: 15px;
-  display: flex;
-  justify-content: center;
-  width: 100px;
-  height: 30px;
-  background-color: rgb(1, 20, 1);
+
 }
 
 #submit_button {
@@ -94,8 +85,8 @@ header {
   margin-left: 150px;
   width: 100px;
   height: 30px;
-  background-color: rgb(1, 20, 1);
-  color: white;
+  
+  color: black;
   border: none;
   border-radius: 5px;
 }
@@ -140,6 +131,7 @@ button:hover {
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
+  margin-left: 150px;
   display: none; /* Hide by default */
   position: absolute;
   background-color: white; /* White background */
