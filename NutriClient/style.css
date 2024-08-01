@@ -201,8 +201,46 @@ h2 {
   display: block;
   float: left;
 }
+
 #meal-planner {
   display: flex;
   flex-direction: row;
   justify-content: end;
+}
+=======
+  justify-content: space-between;
+  position:absolute;
+  top: 50vh;
+  left:20vw;
+  gap:10vw;
+}
+
+.meal_plan {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mealimage{
+  height:300px;
+ 
+}
+
+.ingredientcontainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #b6bbc429;
+  width:200px;
+  height:100px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+.calories{
+  display: flex;
+  justify-content: center;
+  background-color: #b6bbc429;
+  width:200px;
 }
