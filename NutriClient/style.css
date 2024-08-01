@@ -77,7 +77,6 @@ header {
 #activity_btn {
   margin-left: 150px;
   margin-bottom: 15px;
-
 }
 
 #submit_button {
@@ -85,7 +84,6 @@ header {
   margin-left: 150px;
   width: 100px;
   height: 30px;
-  
   color: black;
   border: none;
   border-radius: 5px;
@@ -157,6 +155,7 @@ button:hover {
 .dropdown:hover .dropdown-content {
   display: block; /* Show the dropdown */
 }
+
 .logo {
   display: flex;
   position: absolute;
@@ -183,12 +182,14 @@ button:hover {
   margin-top: 10px;
   margin-left: 20px;
 }
+
 h1 {
   font-family: arial;
   margin-top: 40px;
   margin-left: 20px;
   font-size: 20rm;
 }
+
 h2 {
   display: block;
   float: left;
